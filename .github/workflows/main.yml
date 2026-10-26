@@ -7,7 +7,7 @@ on:
 
 jobs:
   validate-backend:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
       #     npm test
 
   validate-frontend:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -64,7 +64,7 @@ jobs:
 
 
   validate-python-service:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -88,7 +88,7 @@ jobs:
           ruff check .
   
   ruff-lint-pr:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
 
     steps:
       - name: Checkout code
